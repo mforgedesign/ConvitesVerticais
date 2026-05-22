@@ -108,5 +108,6 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
 - **Desafio:** URLs amigáveis e limpas sem `.html` (ex: `/LuanaeNauto/CleoniceeCelio`) não abrem nativamente no GitHub Pages se os arquivos forem gerados diretamente como arquivos `.html` avulsos no subdiretório (resultando em 404).
 - **Solução:** Gerar cada convite em seu próprio subdiretório contendo um arquivo `index.html` (ex: `LuanaeNauto/CleoniceeCelio/index.html`). O GitHub Pages serve automaticamente arquivos `index.html` quando o diretório pai é acessado sem barra ou extensão. Os caminhos de assets e estilos no HTML devem ser adaptados com `../../` para subir os dois níveis de subpasta gerados.
 
-
-
+## 22/05/2026 - Diagnóstico de DNS e Resolução de NXDOMAIN para Domínio Personalizado
+- **Desafio:** Resolver problemas de carregamento de páginas após a vinculação correta do CNAME ao repositório no GitHub Pages.
+- **Solução:** Verificar através de ferramentas de terminal (como `nslookup`) e APIs do GitHub se a configuração do lado do repositório foi bem-sucedida e onde reside o gargalo. Quando o domínio retorna NXDOMAIN globalmente e as requisições diretas ao domínio do GitHub Pages (`mforgedesign.github.io`) realizam o redirecionamento (301) correto para o domínio customizado, fica comprovado que a configuração no GitHub está 100% perfeita. O problema está exclusivamente na falta do apontamento de DNS (registro CNAME para `mforgedesign.github.io` ou registros A para os IPs do GitHub) no gerenciador de DNS do domínio pai (neste caso, sob os nameservers `mysecurecloudhost.com`).
