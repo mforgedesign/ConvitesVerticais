@@ -9,7 +9,6 @@
 3. **Dependências**
 4. **Detalhes da Implementação (HTML/CSS)**
 5. **Automação de Assets (Python)**
-6. **Configurações de Deploy e Ambiente**
 
 ## 1. Visão Geral do Projeto
 Este projeto consiste na criação de um convite digital interativo para casamento (Bruna e Vitor), no formato de uma página web responsiva com rolagem vertical. O layout segue uma estética refinada com paleta "Rosé Gold", detalhes em dourado e decoração floral lateral.
@@ -20,8 +19,6 @@ Este projeto consiste na criação de um convite digital interativo para casamen
 - `fetch_images.py`: Script Python autônomo para baixar e remover o fundo de imagens florais da web.
 - `generate_invitations.py`: Script de geração em lote que lê `index.html` e gera convites personalizados para cada casal de padrinhos.
 - `[nome-do-casal].html`: Convites personalizados gerados individualmente para cada casal de padrinhos.
-- `.gitignore`: Configuração para ignorar ambiente virtual Python e cache de scripts.
-- `CNAME`: Configuração do domínio personalizado cliqueparaabrir.mforge.com para o GitHub Pages.
 - `assets/`: Diretório contendo os recursos de imagem:
   - `raw/`: Imagens originais baixadas da web.
   - `processed/`: Imagens com fundo transparente (processadas via `rembg`).
@@ -39,14 +36,6 @@ Este projeto consiste na criação de um convite digital interativo para casamen
 
 ## 5. Automação de Assets (Python)
 O script `fetch_images.py` busca automaticamente na DuckDuckGo por "rose gold watercolor flowers corner border white background png", salva na pasta `assets/raw/` e utiliza o modelo de inteligência artificial u2net (`rembg`) para extrair os elementos principais, resultando em PNGs transparentes gravados em `assets/processed/`.
-
-## 6. Configurações de Deploy e Ambiente
-- **Nome do Arquivo:** `.gitignore`
-  - **Funcionamento:** Configurado para ignorar o diretório de ambiente virtual Python (`venv/`), arquivos de bytecode compilados (`*.pyc`, `__pycache__/`), arquivos de sistema (`.DS_Store`) e pastas de configuração de IDEs (`.vscode/`, `.idea/`).
-  - **Dependências:** Controla quais arquivos locais não devem ser sincronizados com o repositório remoto do Git.
-- **Nome do Arquivo:** `CNAME`
-  - **Funcionamento:** Define o domínio personalizado `cliqueparaabrir.mforge.com` para a hospedagem do GitHub Pages. Ao receber requisições HTTP neste domínio, o GitHub as direciona para a raiz do repositório.
-  - **Dependências:** Depende da configuração do DNS externa (HostGator) apontando os registros apropriados para os servidores de IP do GitHub Pages.
 
 ## Histórico de Modificações (Changelogs)
 - **[19/05/2026]** `changelog_2026-05-19_14-46_flores_em_frente_nos_cantos.md`: Alteração no CSS (`styles.css`) para corrigir a posição das flores para `position: fixed` e `z-index: 10`, trazendo-as à frente dos conteúdos e fixando-as nos quatro cantos da tela perfeitamente durante o scroll.
@@ -68,6 +57,3 @@ O script `fetch_images.py` busca automaticamente na DuckDuckGo por "rose gold wa
 - **[22/05/2026]** `changelog_2026-05-22_17-15_assinatura_luana_nauto_correcao_sobreposicao.md`: Substituição da assinatura final por "Luana e Nauto", adição de `flex-shrink: 0` nas seções para evitar cortes de texto e correção de colisão/sobreposição na assinatura.
 - **[22/05/2026]** `changelog_2026-05-22_17-20_geracao_lote_convites_padrinhos.md`: Criação de script Python para geração automática de 20 convites personalizados de padrinhos em lote, e adição da documentação dos novos arquivos.
 - **[22/05/2026]** `changelog_2026-05-22_17-25_correcao_nome_padrinho_laldete.md`: Ajuste no script gerador e substituição do convite Valdete pelo correto Laldete de acordo com a grafia literal solicitada pelo usuário.
-- **[22/05/2026]** `changelog_2026-05-22_17-30_publicacao_github_pages_custom_domain.md`: Inicialização do repositório Git, criação de arquivos .gitignore e CNAME, e deploy/ativação do GitHub Pages no repositório remoto mforgedesign/ConvitesVerticais sob o domínio personalizado cliqueparaabrir.mforge.com.
-
-

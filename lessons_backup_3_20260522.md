@@ -66,13 +66,3 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
 - **Solução:**
   1. Utilizar a abordagem de normalização provisória e solicitar explicitamente a confirmação ao usuário (Regra R4 - nunca adivinhar).
   2. Ao receber a correção ou confirmação, atualizar o script gerador base, reexecutar a automação para criar o novo arquivo (ex: `laldete-e-maria-aparecida.html`) e deletar ativamente os arquivos HTML órfãos do lote anterior (ex: `valdete-e-maria-aparecida.html`), garantindo que o diretório contenha estritamente os convites válidos.
-
-## 22/05/2026 - Deploy e Configuração de Domínio Personalizado no GitHub Pages
-- **Desafio:** Configurar domínio customizado em hospedagem GitHub Pages garantindo que a resolução de DNS e o arquivo CNAME estejam alinhados sem causar loops de redirecionamento ou quebra do link seguro (HTTPS).
-- **Solução:**
-  1. Criar o arquivo `CNAME` na raiz do repositório contendo exatamente o domínio (`cliqueparaabrir.mforge.com`) sem prefixos de protocolo (como `http://`).
-  2. Inicializar o repositório local e fazer o push para o branch padrão (`main`).
-  3. Ativar o recurso GitHub Pages via API do GitHub apontando para a pasta raiz (`/`) do branch `main`, o que automaticamente detecta o arquivo `CNAME` e realiza a requisição de certificado SSL/TLS (processo que pode levar alguns minutos para ser finalizado).
-  4. Utilizar tokens de acesso pessoal clássicos com escopo `repo` para autenticação HTTPS via git remotes com URL formatada (`https://<token>@github.com/...`).
-
-
