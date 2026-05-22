@@ -19,7 +19,7 @@ Este projeto consiste na criação de um convite digital interativo para casamen
 - `styles.css`: Folha de estilos para o design e responsividade.
 - `fetch_images.py`: Script Python autônomo para baixar e remover o fundo de imagens florais da web.
 - `generate_invitations.py`: Script de geração em lote que lê `index.html` e gera convites personalizados para cada casal de padrinhos.
-- `Luana&Nauto/`: Diretório contendo os convites individuais dos padrinhos (ex: `CleoniceeCelio.html`) estruturados no padrão CamelCase sem espaços ou hifens.
+- `[nome-do-casal].html`: Convites personalizados gerados individualmente para cada casal de padrinhos.
 - `.gitignore`: Configuração para ignorar ambiente virtual Python e cache de scripts.
 - `CNAME`: Configuração do domínio personalizado cliqueparaabrir.mforge.com para o GitHub Pages.
 - `assets/`: Diretório contendo os recursos de imagem:
@@ -69,7 +69,3 @@ O script `fetch_images.py` busca automaticamente na DuckDuckGo por "rose gold wa
 - **[22/05/2026]** `changelog_2026-05-22_17-20_geracao_lote_convites_padrinhos.md`: Criação de script Python para geração automática de 20 convites personalizados de padrinhos em lote, e adição da documentação dos novos arquivos.
 - **[22/05/2026]** `changelog_2026-05-22_17-25_correcao_nome_padrinho_laldete.md`: Ajuste no script gerador e substituição do convite Valdete pelo correto Laldete de acordo com a grafia literal solicitada pelo usuário.
 - **[22/05/2026]** `changelog_2026-05-22_17-30_publicacao_github_pages_custom_domain.md`: Inicialização do repositório Git, criação de arquivos .gitignore e CNAME, e deploy/ativação do GitHub Pages no repositório remoto mforgedesign/ConvitesVerticais sob o domínio personalizado cliqueparaabrir.mforge.com.
-- **[22/05/2026]** `changelog_2026-05-22_17-35_organizando_convites_em_subdiretorios.md`: Reestruturação do script gerador para criar convites dentro da subpasta slug `Luana&Nauto` com padrão de nomenclatura CamelCase (ex: `CleoniceeCelio.html`) e ajuste correspondente de caminhos relativos de assets e estilos.
-
-
-

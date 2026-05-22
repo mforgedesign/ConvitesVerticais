@@ -32,19 +32,21 @@ padrinhos = [
 ]
 
 def sanitize_filename(name):
+    # Convert to lowercase
+    name = name.lower()
     # Normalize unicode characters to decompose them into letters and diacritics
     name = unicodedata.normalize('NFKD', name)
     # Remove diacritics
     name = "".join([c for c in name if not unicodedata.combining(c)])
-    # Remove spaces
-    name = name.replace(" ", "")
-    # Remove any other non-alphanumeric characters (keeping case)
-    name = re.sub(r'[^a-zA-Z0-9]', '', name)
+    # Replace anything that isn't a letter or space with empty string
+    name = re.sub(r'[^a-z0-9\s-]', '', name)
+    # Replace spaces with hyphens
+    name = re.sub(r'\s+', '-', name)
+    # Return sanitized name with .html extension
     return f"{name}.html"
 
 def generate():
     template_path = "index.html"
-    output_dir = "Luana&Nauto"
     
     if not os.path.exists(template_path):
         print("Error: index.html template not found.")
@@ -55,15 +57,10 @@ def generate():
         
     print(f"Loaded template from {template_path}.")
     
-    # Create the output directory if it doesn't exist
-    os.makedirs(output_dir, exist_ok=True)
-    print(f"Ensured output directory '{output_dir}' exists.")
-    
     generated_files = []
     
     for pair in padrinhos:
         filename = sanitize_filename(pair)
-        filepath = os.path.join(output_dir, filename)
         
         # Replace the placeholders in the template
         # 1. Title tag: <title>Convite Especial - Bruna e Vitor</title>
@@ -78,18 +75,14 @@ def generate():
             f'<h1 class="names">{pair}</h1>'
         )
         
-        # 3. Adjust asset paths for the subdirectory structure
-        content = content.replace('styles.css', '../styles.css')
-        content = content.replace('assets/processed/', '../assets/processed/')
-        
         # Write the customized HTML file
-        with open(filepath, "w", encoding="utf-8") as f_out:
+        with open(filename, "w", encoding="utf-8") as f_out:
             f_out.write(content)
             
-        generated_files.append(filepath)
-        print(f"Generated: {filepath} for {pair}")
+        generated_files.append(filename)
+        print(f"Generated: {filename} for {pair}")
         
-    print(f"\nSuccessfully generated {len(generated_files)} invitation files under '{output_dir}'.")
+    print(f"\nSuccessfully generated {len(generated_files)} invitation files.")
 
 if __name__ == "__main__":
     generate()

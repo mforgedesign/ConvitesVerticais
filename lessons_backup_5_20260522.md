@@ -75,9 +75,4 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
   3. Ativar o recurso GitHub Pages via API do GitHub apontando para a pasta raiz (`/`) do branch `main`, o que automaticamente detecta o arquivo `CNAME` e realiza a requisição de certificado SSL/TLS (processo que pode levar alguns minutos para ser finalizado).
   4. Utilizar tokens de acesso pessoal clássicos com escopo `repo` para autenticação HTTPS via git remotes com URL formatada (`https://<token>@github.com/...`).
 
-## 22/05/2026 - Estrutura de Slugs em Subdiretórios e Caminhos Relativos no GitHub Pages
-- **Desafio:** Organizar os convites gerados em lote dentro de um subdiretório correspondente ao slug do casal (ex: `Luana&Nauto/`) para criar URLs personalizadas sem quebrar o carregamento dos assets e estilos (CSS, imagens) que permanecem na raiz.
-- **Solução:**
-  1. Modificar o script de geração em lote para salvar os arquivos gerados no diretório do slug do casal (usando `os.makedirs` para garantir sua criação).
-  2. Ajustar dinamicamente as referências de arquivos e caminhos no HTML gerado, alterando caminhos locais como `styles.css` e `assets/processed/` para caminhos relativos superiores (`../styles.css` e `../assets/processed/`).
-  3. Utilizar o padrão de nomenclatura `CamelCase` sem hifens nem espaços nos arquivos do subdiretório (ex: `CleoniceeCelio.html`) permitindo que o GitHub Pages os sirva em URLs limpas como `cliqueparaabrir.mforge.com/Luana&Nauto/CleoniceeCelio`.
+
