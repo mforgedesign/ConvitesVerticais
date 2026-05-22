@@ -73,6 +73,7 @@ O script `fetch_images.py` busca automaticamente na DuckDuckGo por "rose gold wa
 - **[22/05/2026]** `changelog_2026-05-22_17-55_movendo_arquivos_backup_para_pasta.md`: Remoção de todos os arquivos de backup da raiz do repositório no controle de versão Git, movendo-os localmente para o diretório `backups/` e configurando o `.gitignore` para desconsiderá-los.
 - **[22/05/2026]** `changelog_2026-05-22_18-05_correcao_nome_padrinho_helio.md`: Correção do nome do padrinho Nélio Batista para Hélio Batista no script gerador e regeneração em lote das páginas HTML de convite.
 - **[22/05/2026]** `changelog_2026-05-22_18-04_troca_slug_para_luanaenauto.md`: Alteração do diretório de saída do lote de convites de Luana&Nauto para LuanaeNauto para corrigir erros de carregamento e URL amigável no GitHub Pages.
+- **[22/05/2026]** `changelog_2026-05-22_18-15_slugs_de_convites_como_pastas.md`: Reestruturação dos convites individuais para serem gerados como pastas com `index.html` (ex: `LuanaeNauto/CleoniceeCelio/index.html`) para permitir que o GitHub Pages resolva as URLs limpas sem extensão `.html` (ex: `LuanaeNauto/CleoniceeCelio`).
 
 
 

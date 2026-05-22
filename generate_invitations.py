@@ -31,7 +31,7 @@ padrinhos = [
     "Felipe e Poliana"
 ]
 
-def sanitize_filename(name):
+def sanitize_foldername(name):
     # Normalize unicode characters to decompose them into letters and diacritics
     name = unicodedata.normalize('NFKD', name)
     # Remove diacritics
@@ -40,7 +40,7 @@ def sanitize_filename(name):
     name = name.replace(" ", "")
     # Remove any other non-alphanumeric characters (keeping case)
     name = re.sub(r'[^a-zA-Z0-9]', '', name)
-    return f"{name}.html"
+    return name
 
 def generate():
     template_path = "index.html"
@@ -62,8 +62,10 @@ def generate():
     generated_files = []
     
     for pair in padrinhos:
-        filename = sanitize_filename(pair)
-        filepath = os.path.join(output_dir, filename)
+        foldername = sanitize_foldername(pair)
+        guest_dir = os.path.join(output_dir, foldername)
+        os.makedirs(guest_dir, exist_ok=True)
+        filepath = os.path.join(guest_dir, "index.html")
         
         # Replace the placeholders in the template
         # 1. Title tag: <title>Convite Especial - Bruna e Vitor</title>
@@ -78,9 +80,9 @@ def generate():
             f'<h1 class="names">{pair}</h1>'
         )
         
-        # 3. Adjust asset paths for the subdirectory structure
-        content = content.replace('styles.css', '../styles.css')
-        content = content.replace('assets/processed/', '../assets/processed/')
+        # 3. Adjust asset paths for the subdirectory structure (two levels deep)
+        content = content.replace('styles.css', '../../styles.css')
+        content = content.replace('assets/processed/', '../../assets/processed/')
         
         # Write the customized HTML file
         with open(filepath, "w", encoding="utf-8") as f_out:

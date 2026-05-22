@@ -104,4 +104,9 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
 - **Desafio:** Pasta de saída de convites usando o caractere `&` (ex: `Luana&Nauto`) apresentava falhas intermitentes de navegação e resolução 404 ao ser hospedada no GitHub Pages com domínio customizado, já que o caractere `&` possui significado especial em protocolos web (como delimitador de parâmetros de busca).
 - **Solução:** Substituir o caractere especial `&` por um caractere alfanumérico limpo (ex: alterar o slug para `LuanaeNauto`). Isso garante que os servidores estáticos de hospedagem resolvam a rota perfeitamente sem decodificações corrompidas de URL (evitando `%26` ou interpretação como query parameters).
 
+## 22/05/2026 - URLs Sem Extensão (.html) no GitHub Pages via Diretórios
+- **Desafio:** URLs amigáveis e limpas sem `.html` (ex: `/LuanaeNauto/CleoniceeCelio`) não abrem nativamente no GitHub Pages se os arquivos forem gerados diretamente como arquivos `.html` avulsos no subdiretório (resultando em 404).
+- **Solução:** Gerar cada convite em seu próprio subdiretório contendo um arquivo `index.html` (ex: `LuanaeNauto/CleoniceeCelio/index.html`). O GitHub Pages serve automaticamente arquivos `index.html` quando o diretório pai é acessado sem barra ou extensão. Os caminhos de assets e estilos no HTML devem ser adaptados com `../../` para subir os dois níveis de subpasta gerados.
+
+
 
