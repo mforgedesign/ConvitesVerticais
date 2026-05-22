@@ -44,7 +44,7 @@ def sanitize_filename(name):
 
 def generate():
     template_path = "index.html"
-    output_dir = "Luana&Nauto"
+    output_dir = "LuanaeNauto"
     
     if not os.path.exists(template_path):
         print("Error: index.html template not found.")

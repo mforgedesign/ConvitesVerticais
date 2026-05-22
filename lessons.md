@@ -100,3 +100,8 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
   2. Executar o script para criar a nova página corrigida.
   3. Fazer a exclusão manual e explícita do arquivo órfão no Git (usando `git rm`) para garantir que links quebrados ou incorretos não continuem sendo servidos no ambiente de produção do GitHub Pages.
 
+## 22/05/2026 - Evitar Caracteres Especiais Reservados em Slugs de URLs
+- **Desafio:** Pasta de saída de convites usando o caractere `&` (ex: `Luana&Nauto`) apresentava falhas intermitentes de navegação e resolução 404 ao ser hospedada no GitHub Pages com domínio customizado, já que o caractere `&` possui significado especial em protocolos web (como delimitador de parâmetros de busca).
+- **Solução:** Substituir o caractere especial `&` por um caractere alfanumérico limpo (ex: alterar o slug para `LuanaeNauto`). Isso garante que os servidores estáticos de hospedagem resolvam a rota perfeitamente sem decodificações corrompidas de URL (evitando `%26` ou interpretação como query parameters).
+
+
