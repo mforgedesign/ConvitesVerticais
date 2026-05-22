@@ -13,7 +13,7 @@ padrinhos = [
     "Josimara e Gustavo",
     "Roseny e João Otávio",
     "Solange e Júnior",
-    "Nélio Batista e Maria Aparecida",
+    "Hélio Batista e Maria Aparecida",
     "Daniela e Mateus",
     "Kátia e Wallington",
     "Felipe e Vanessa",

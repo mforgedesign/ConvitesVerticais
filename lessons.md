@@ -92,3 +92,11 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
   1. Centralizar todos os backups locais em um subdiretório dedicado (`backups/`).
   2. Adicionar o subdiretório `backups/` ao arquivo `.gitignore` para blindar o repositório contra o envio acidental de arquivos temporários.
   3. Para arquivos que já estavam sendo rastreados, utilizar `git rm --cached <arquivos>` para removê-los do índice de commits (desrastreá-los) mantendo a cópia local intacta no disco antes de movê-la para a pasta ignorada.
+
+## 22/05/2026 - Propagação de Correções e Limpeza de Arquivos Órfãos Gerados em Lote
+- **Desafio:** Ao corrigir dados de entrada de um script de geração em lote (ex: alterar o nome do padrinho Nélio para Hélio), o script passa a gerar um arquivo novo com o nome correto, porém o arquivo gerado com o nome anterior torna-se "órfão" na pasta de saída.
+- **Solução:**
+  1. Corrigir o dado de entrada na lista do script.
+  2. Executar o script para criar a nova página corrigida.
+  3. Fazer a exclusão manual e explícita do arquivo órfão no Git (usando `git rm`) para garantir que links quebrados ou incorretos não continuem sendo servidos no ambiente de produção do GitHub Pages.
+
