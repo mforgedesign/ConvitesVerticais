@@ -81,8 +81,3 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
   1. Modificar o script de geração em lote para salvar os arquivos gerados no diretório do slug do casal (usando `os.makedirs` para garantir sua criação).
   2. Ajustar dinamicamente as referências de arquivos e caminhos no HTML gerado, alterando caminhos locais como `styles.css` e `assets/processed/` para caminhos relativos superiores (`../styles.css` e `../assets/processed/`).
   3. Utilizar o padrão de nomenclatura `CamelCase` sem hifens nem espaços nos arquivos do subdiretório (ex: `CleoniceeCelio.html`) permitindo que o GitHub Pages os sirva em URLs limpas como `cliqueparaabrir.mforge.com/Luana&Nauto/CleoniceeCelio`.
-
-## 22/05/2026 - Caractere de Ampersand (&) no Windows PowerShell
-- **Desafio:** Ao executar comandos do Git ou do sistema no Windows PowerShell passando caminhos que contêm o caractere de ampersand `&` (ex: `git add Luana&Nauto/`), o terminal falha interpretando o ampersand como um operador reservado inválido.
-- **Solução:** Sempre encapsular caminhos ou strings que contêm caracteres especiais ou reservados do PowerShell em aspas duplas (ex: `git add "Luana&Nauto/"`), garantindo a correta interpretação da string literal.
-
