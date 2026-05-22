@@ -111,3 +111,11 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
 ## 22/05/2026 - Diagnóstico de DNS e Resolução de NXDOMAIN para Domínio Personalizado
 - **Desafio:** Resolver problemas de carregamento de páginas após a vinculação correta do CNAME ao repositório no GitHub Pages.
 - **Solução:** Verificar através de ferramentas de terminal (como `nslookup`) e APIs do GitHub se a configuração do lado do repositório foi bem-sucedida e onde reside o gargalo. Quando o domínio retorna NXDOMAIN globalmente e as requisições diretas ao domínio do GitHub Pages (`mforgedesign.github.io`) realizam o redirecionamento (301) correto para o domínio customizado, fica comprovado que a configuração no GitHub está 100% perfeita. O problema está exclusivamente na falta do apontamento de DNS (registro CNAME para `mforgedesign.github.io` ou registros A para os IPs do GitHub) no gerenciador de DNS do domínio pai (neste caso, sob os nameservers `mysecurecloudhost.com`).
+
+## 22/05/2026 - Geração em Lote Condicional para Convidados Individuais (Madrinha e Padrinho)
+- **Desafio:** Separar um casal cadastrado conjuntamente em convites individuais específicos, removendo os blocos de conteúdo visual irrelevantes de cada gênero (madrinha/padrinho), alterando a linguagem do plural para o singular gramatical adequado e preservando o plano de fundo decorativo lateral.
+- **Solução:**
+  1. Modificar a estrutura de dados de convidados em `generate_invitations.py` para mapear o tipo do convidado (`casal`, `madrinha`, `padrinho`).
+  2. Implementar substituições dinâmicas de texto multilistas normalizadas em `\n` para adequar as introduções e links de retorno do WhatsApp ao singular feminino ou masculino.
+  3. Utilizar expressões regulares não-gulosas (`re.DOTALL` e `.*?`) para capturar e remover a seção indesejada por completo a partir do seu comentário HTML demarcador (ex: remover a seção de madrinha inteira no convite do padrinho).
+  4. Para padrinhos individuais, reinserir dinamicamente a classe `.section-relative` e as tags `<img>` dos SVGs florais no cabeçalho da seção de padrinho, visto que a seção de madrinha (que as continha originalmente) foi excluída, restaurando a simetria estética do convite.
