@@ -70,6 +70,8 @@ O script `fetch_images.py` busca automaticamente na DuckDuckGo por "rose gold wa
 - **[22/05/2026]** `changelog_2026-05-22_17-25_correcao_nome_padrinho_laldete.md`: Ajuste no script gerador e substituição do convite Valdete pelo correto Laldete de acordo com a grafia literal solicitada pelo usuário.
 - **[22/05/2026]** `changelog_2026-05-22_17-30_publicacao_github_pages_custom_domain.md`: Inicialização do repositório Git, criação de arquivos .gitignore e CNAME, e deploy/ativação do GitHub Pages no repositório remoto mforgedesign/ConvitesVerticais sob o domínio personalizado cliqueparaabrir.mforge.com.
 - **[22/05/2026]** `changelog_2026-05-22_17-35_organizando_convites_em_subdiretorios.md`: Reestruturação do script gerador para criar convites dentro da subpasta slug `Luana&Nauto` com padrão de nomenclatura CamelCase (ex: `CleoniceeCelio.html`) e ajuste correspondente de caminhos relativos de assets e estilos.
+- **[22/05/2026]** `changelog_2026-05-22_17-55_movendo_arquivos_backup_para_pasta.md`: Remoção de todos os arquivos de backup da raiz do repositório no controle de versão Git, movendo-os localmente para o diretório `backups/` e configurando o `.gitignore` para desconsiderá-los.
+
 
 
 

@@ -86,3 +86,9 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
 - **Desafio:** Ao executar comandos do Git ou do sistema no Windows PowerShell passando caminhos que contêm o caractere de ampersand `&` (ex: `git add Luana&Nauto/`), o terminal falha interpretando o ampersand como um operador reservado inválido.
 - **Solução:** Sempre encapsular caminhos ou strings que contêm caracteres especiais ou reservados do PowerShell em aspas duplas (ex: `git add "Luana&Nauto/"`), garantindo a correta interpretação da string literal.
 
+## 22/05/2026 - Organização e Exclusão de Backups do Controle de Versão (Git)
+- **Desafio:** Manter o histórico e a conformidade de backups locais exigidos pela regra R6 sem poluir a raiz do repositório ou expor centenas de arquivos de backup na interface pública do GitHub.
+- **Solução:** 
+  1. Centralizar todos os backups locais em um subdiretório dedicado (`backups/`).
+  2. Adicionar o subdiretório `backups/` ao arquivo `.gitignore` para blindar o repositório contra o envio acidental de arquivos temporários.
+  3. Para arquivos que já estavam sendo rastreados, utilizar `git rm --cached <arquivos>` para removê-los do índice de commits (desrastreá-los) mantendo a cópia local intacta no disco antes de movê-la para a pasta ignorada.
