@@ -10,15 +10,18 @@
 4. **Detalhes da Implementação (HTML/CSS)**
 5. **Automação de Assets (Python)**
 6. **Configurações de Deploy e Ambiente**
+7. **Workflow de Replicação Técnica**
 
 ## 1. Visão Geral do Projeto
 Este projeto consiste na criação de um convite digital interativo para casamento (Bruna e Vitor), no formato de uma página web responsiva com rolagem vertical. O layout segue uma estética refinada com paleta "Rosé Gold", detalhes em dourado e decoração floral lateral.
+Para permitir a replicação e criação de novos convites semelhantes no futuro por outras I.A.s, criamos um guia central de referência técnica em [workflow_geracao_convites.md](file:///c:/Users/Acer/Documents/VerticalBuilder/Testes/ConviteRoseGold/workflow_geracao_convites.md).
 
 ## 2. Estrutura de Arquivos
 - `index.html`: Arquivo principal contendo a marcação semântica e a estrutura do convite (funciona como template para geração em lote).
 - `styles.css`: Folha de estilos para o design e responsividade.
 - `fetch_images.py`: Script Python autônomo para baixar e remover o fundo de imagens florais da web.
 - `generate_invitations.py`: Script de geração em lote que lê `index.html` e gera convites personalizados para cada casal de padrinhos.
+- `workflow_geracao_convites.md`: Guia e manual técnico de referência para replicação do projeto de convites por I.A.s ou desenvolvedores futuramente.
 - `LuanaeNauto/`: Diretório contendo os convites individuais dos padrinhos (ex: `CleoniceeCelio.html`) estruturados no padrão CamelCase sem espaços ou hifens.
 - `.gitignore`: Configuração para ignorar ambiente virtual Python e cache de scripts.
 - `CNAME`: Configuração do domínio personalizado cliqueparaabrir.mforge.com para o GitHub Pages.
@@ -77,3 +80,6 @@ O script `fetch_images.py` busca automaticamente na DuckDuckGo por "rose gold wa
 - **[22/05/2026]** `changelog_2026-05-22_18-35_correcao_do_dominio_customizado_cname.md`: Correção do domínio customizado no arquivo CNAME de `.com` para `.com.br` para coincidir com o apontamento de DNS ativo na zona de DNS do usuário.
 - **[22/05/2026]** `changelog_2026-05-22_18-40_separacao_de_convites_individuais_padrinhos.md`: Separação do casal Roseny e João Otávio em dois convites individuais (madrinha e padrinho) com linguagem no singular e ocultação das seções opostas.
 - **[25/05/2026]** `changelog_2026-05-25_10-45_alteracao_de_nome_do_casal.md`: Alteração do nome do casal de padrinhos Cleonice e Célio para Maria e Thiago, com regeneração das páginas de convite correspondentes.
+
+## 7. Workflow de Replicação Técnica
+Para recriar um projeto de convite digital responsivo com a mesma arquitetura de geração em lote de páginas estáticas e deploy, consulte o arquivo [workflow_geracao_convites.md](file:///c:/Users/Acer/Documents/VerticalBuilder/Testes/ConviteRoseGold/workflow_geracao_convites.md). Ele contém detalhes de design, comportamento estrutural do código Python e o passo a passo para publicação no GitHub Pages.
