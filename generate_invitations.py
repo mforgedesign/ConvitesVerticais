@@ -27,7 +27,7 @@ padrinhos = [
     {"names": "Elizabete e Honório", "type": "casal"},
     {"names": "Laldete e Maria Aparecida", "type": "casal"},
     {"names": "Werlei e Danielle", "type": "casal"},
-    {"names": "Cleonice e Célio", "type": "casal"},
+    {"names": "Maria e Thiago", "type": "casal"},
     {"names": "Felipe e Poliana", "type": "casal"}
 ]
 

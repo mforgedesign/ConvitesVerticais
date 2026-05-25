@@ -119,3 +119,10 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
   2. Implementar substituições dinâmicas de texto multilistas normalizadas em `\n` para adequar as introduções e links de retorno do WhatsApp ao singular feminino ou masculino.
   3. Utilizar expressões regulares não-gulosas (`re.DOTALL` e `.*?`) para capturar e remover a seção indesejada por completo a partir do seu comentário HTML demarcador (ex: remover a seção de madrinha inteira no convite do padrinho).
   4. Para padrinhos individuais, reinserir dinamicamente a classe `.section-relative` e as tags `<img>` dos SVGs florais no cabeçalho da seção de padrinho, visto que a seção de madrinha (que as continha originalmente) foi excluída, restaurando a simetria estética do convite.
+
+## 25/05/2026 - Alteração de Dados de Entrada e Limpeza de Diretórios no Controle de Versão
+- **Desafio:** Quando o usuário solicita a alteração do nome de um convidado/casal (ex: de "Cleonice e Célio" para "Maria e Thiago"), o script de geração cria uma pasta com a nova slug sanitizada, mas a pasta gerada anteriormente torna-se órfã e permanece no repositório.
+- **Solução:**
+  1. Atualizar a lista de convidados em `generate_invitations.py`.
+  2. Executar o gerador de lote para criar o novo diretório com o arquivo `index.html` correspondente.
+  3. Excluir a pasta antiga manualmente do sistema de arquivos e encenar a exclusão no controle de versão do Git (usando `git rm -r` ou `git add .` pós-deleção local), garantindo que caminhos antigos e órfãos não continuem versionados ou servidos no ambiente de deploy.
