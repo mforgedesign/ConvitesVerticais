@@ -126,3 +126,7 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
   1. Atualizar a lista de convidados em `generate_invitations.py`.
   2. Executar o gerador de lote para criar o novo diretório com o arquivo `index.html` correspondente.
   3. Excluir a pasta antiga manualmente do sistema de arquivos e encenar a exclusão no controle de versão do Git (usando `git rm -r` ou `git add .` pós-deleção local), garantindo que caminhos antigos e órfãos não continuem versionados ou servidos no ambiente de deploy.
+
+## 06/06/2026 - Execução Direta do Python de Ambiente Virtual no Windows
+- **Desafio:** Executar scripts Python que dependem de pacotes instalados no ambiente virtual local (`venv`) no Windows PowerShell sem alterar permissões de política de execução do PowerShell.
+- **Solução:** Executar o interpretador Python diretamente de dentro do diretório do ambiente virtual (ex: `.\venv\Scripts\python.exe generate_invitations.py`). Isso garante que todas as dependências isoladas sejam carregadas e resolve o script sem a necessidade de rodar o script de ativação do PowerShell (que muitas vezes é bloqueado por políticas de segurança locais do Windows).
