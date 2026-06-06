@@ -138,3 +138,7 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
 ## 06/06/2026 - Quebras de Linha Dinâmicas em Títulos Mobile de Convites
 - **Desafio:** Em telas mobile de largura limitada (como 320px-480px), nomes de casais longos que contêm o conectivo "e" (ex: "Sandro e Ana Paula") quebram de forma automática e descentralizada pelo navegador, prejudicando a simetria visual do design.
 - **Solução:** Implementar substituição dinâmica no script gerador para convidados do tipo casal, inserindo a tag `<br>` logo após o conectivo " e " apenas na marcação do cabeçalho HTML (`<h1>`), mantendo o nome do convidado limpo em títulos de páginas e diretórios. Isso garante o alinhamento centralizado e balanceado em todas as resoluções de tela.
+
+## 06/06/2026 - Resolução de Sobreposição de Elementos Absolutos com Contexto de Empilhamento
+- **Desafio:** Elementos posicionados de forma absoluta que transbordam de suas seções originais (como decorações florais de rodapé `.floral-footer`) podem cobrir o conteúdo de seções vizinhas se estas últimas forem renderizadas com posicionamento estático padrão (`position: static`), deixando os textos ilegíveis.
+- **Solução:** Atribuir explicitamente `position: relative` e um `z-index` de nível superior (ex: `z-index: 3`) às seções de conteúdo que sofrem sobreposição. Isso cria uma nova camada de empilhamento no navegador, garantindo que o seu fundo (como `rgba(255, 255, 255, 0.7)`) e textos fiquem à frente das decorações absolutas transbordantes.
