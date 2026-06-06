@@ -130,3 +130,7 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
 ## 06/06/2026 - Execução Direta do Python de Ambiente Virtual no Windows
 - **Desafio:** Executar scripts Python que dependem de pacotes instalados no ambiente virtual local (`venv`) no Windows PowerShell sem alterar permissões de política de execução do PowerShell.
 - **Solução:** Executar o interpretador Python diretamente de dentro do diretório do ambiente virtual (ex: `.\venv\Scripts\python.exe generate_invitations.py`). Isso garante que todas as dependências isoladas sejam carregadas e resolve o script sem a necessidade de rodar o script de ativação do PowerShell (que muitas vezes é bloqueado por políticas de segurança locais do Windows).
+
+## 06/06/2026 - Exclusão de Diretórios Órfãos no Git Durante Renomeação
+- **Desafio:** Quando o nome de um convidado é alterado, o script gera o HTML na nova pasta baseada na nova slug, mas a pasta correspondente à slug antiga fica mantida localmente e no repositório Git, o que pode poluir o código e deixar URLs inválidas ativas no deploy.
+- **Solução:** Utilizar comandos explícitos do Git (como `git rm -r <caminho_da_pasta>`) para excluir a pasta órfã do controle de versão logo antes de rodar o gerador. Isso garante que a exclusão seja devidamente encenada para o commit seguinte e previne inconsistências de deploy.
