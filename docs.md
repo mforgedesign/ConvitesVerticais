@@ -82,6 +82,7 @@ O script `fetch_images.py` busca automaticamente na DuckDuckGo por "rose gold wa
 - **[25/05/2026]** `changelog_2026-05-25_10-45_alteracao_de_nome_do_casal.md`: Alteração do nome do casal de padrinhos Cleonice e Célio para Maria e Thiago, com regeneração das páginas de convite correspondentes.
 - **[06/06/2026]** `changelog_2026-06-06_14-12_adicao_de_sandro_e_paula_como_padrinhos.md`: Adição de Sandro e Paula como casal de padrinhos na lista de geração em lote e regeneração dos arquivos HTML correspondentes.
 - **[06/06/2026]** `changelog_2026-06-06_14-15_correcao_nome_sandro_e_ana_paula.md`: Correção do nome do casal de padrinhos Sandro e Paula para Sandro e Ana Paula, com a exclusão do diretório de convite antigo.
+- **[06/06/2026]** `changelog_2026-06-06_14-18_quebra_de_linha_nomes_casais.md`: Implementação de quebra de linha dinâmica no cabeçalho após o conectivo "e" para todos os convidados do tipo casal, melhorando o alinhamento em viewports mobile.
 
 ## 7. Workflow de Replicação Técnica
 Para recriar um projeto de convite digital responsivo com a mesma arquitetura de geração em lote de páginas estáticas e deploy, consulte o arquivo [workflow_geracao_convites.md](file:///c:/Users/Acer/Documents/VerticalBuilder/Testes/ConviteRoseGold/workflow_geracao_convites.md). Ele contém detalhes de design, comportamento estrutural do código Python e o passo a passo para publicação no GitHub Pages.

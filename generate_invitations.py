@@ -121,9 +121,15 @@ def generate():
             "<title>Convite Especial - Bruna e Vitor</title>",
             f"<title>Convite Especial - {pair}</title>"
         )
+        
+        # For the header, if it's a couple, put a line break after " e "
+        header_names = pair
+        if g_type == "casal" and " e " in pair:
+            header_names = pair.replace(" e ", " e<br>")
+            
         content = content.replace(
             '<h1 class="names">Bruna e Vitor</h1>',
-            f'<h1 class="names">{pair}</h1>'
+            f'<h1 class="names">{header_names}</h1>'
         )
         
         # 2. Adjust content based on guest type

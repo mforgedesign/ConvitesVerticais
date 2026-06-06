@@ -134,3 +134,7 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
 ## 06/06/2026 - Exclusão de Diretórios Órfãos no Git Durante Renomeação
 - **Desafio:** Quando o nome de um convidado é alterado, o script gera o HTML na nova pasta baseada na nova slug, mas a pasta correspondente à slug antiga fica mantida localmente e no repositório Git, o que pode poluir o código e deixar URLs inválidas ativas no deploy.
 - **Solução:** Utilizar comandos explícitos do Git (como `git rm -r <caminho_da_pasta>`) para excluir a pasta órfã do controle de versão logo antes de rodar o gerador. Isso garante que a exclusão seja devidamente encenada para o commit seguinte e previne inconsistências de deploy.
+
+## 06/06/2026 - Quebras de Linha Dinâmicas em Títulos Mobile de Convites
+- **Desafio:** Em telas mobile de largura limitada (como 320px-480px), nomes de casais longos que contêm o conectivo "e" (ex: "Sandro e Ana Paula") quebram de forma automática e descentralizada pelo navegador, prejudicando a simetria visual do design.
+- **Solução:** Implementar substituição dinâmica no script gerador para convidados do tipo casal, inserindo a tag `<br>` logo após o conectivo " e " apenas na marcação do cabeçalho HTML (`<h1>`), mantendo o nome do convidado limpo em títulos de páginas e diretórios. Isso garante o alinhamento centralizado e balanceado em todas as resoluções de tela.
