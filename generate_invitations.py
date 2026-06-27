@@ -29,7 +29,8 @@ padrinhos = [
     {"names": "Werlei e Danielle", "type": "casal"},
     {"names": "Maria e Thiago", "type": "casal"},
     {"names": "Felipe e Poliana", "type": "casal"},
-    {"names": "Sandro e Ana Paula", "type": "casal"}
+    {"names": "Sandro e Ana Paula", "type": "casal"},
+    {"names": "Ernando e Maria das Graças", "type": "casal"}
 ]
 
 def sanitize_foldername(name):

@@ -142,3 +142,7 @@ Neste arquivo, registraremos as lições aprendidas durante o desenvolvimento do
 ## 06/06/2026 - Resolução de Sobreposição de Elementos Absolutos com Contexto de Empilhamento
 - **Desafio:** Elementos posicionados de forma absoluta que transbordam de suas seções originais (como decorações florais de rodapé `.floral-footer`) podem cobrir o conteúdo de seções vizinhas se estas últimas forem renderizadas com posicionamento estático padrão (`position: static`), deixando os textos ilegíveis.
 - **Solução:** Atribuir explicitamente `position: relative` e um `z-index` de nível superior (ex: `z-index: 3`) às seções de conteúdo que sofrem sobreposição. Isso cria uma nova camada de empilhamento no navegador, garantindo que o seu fundo (como `rgba(255, 255, 255, 0.7)`) e textos fiquem à frente das decorações absolutas transbordantes.
+
+## 27/06/2026 - Manuseio de Caracteres Especiais no Nome de Convidados e Slugs de URLs
+- **Desafio:** A geração de slugs para URLs no GitHub Pages contendo acentos portugueses (ex: "Graças" em "Ernando e Maria das Graças") pode causar caracteres corrompidos nas rotas de arquivos.
+- **Solução:** Utilizar a função de sanitização nativa do script que emprega `unicodedata.normalize('NFKD')` para decompor e extrair acentuações das letras, garantindo que o nome da pasta de saída seja gerado de forma limpa como `ErnandoeMariadasGracas`, enquanto no HTML mantemos o nome original acentuado e com a quebra de linha.
